@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: chat-socket-service
+spec:
+  selector:
+    app: chat-socket
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 3005
+      targetPort: 3005
+      nodePort: 31000
