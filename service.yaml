@@ -6,6 +6,10 @@ spec:
   selector:
     app: chat-socket
   type: ClusterIP
+  sessionAffinity: ClientIP
+  sessionAffinityConfig:
+    clientIP:
+      timeoutSeconds: 86400
   ports:
     - protocol: TCP
       port: 3005

@@ -17,3 +17,8 @@ spec:
           image: jurajmarkesic/chat-socket:f6ad127493b5ad2e09d9d285d5ce009a5b6a7615
           ports:
             - containerPort: 3005
+          env:
+            - name: POD_IP
+              valueFrom:
+                fieldRef:
+                  fieldPath: status.podIP

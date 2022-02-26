@@ -4,6 +4,7 @@ dotenv.config({ path: __dirname + '/.env' });
 
 interface ServerToClientEvents {
   noArg: () => void;
+  podIP: (podIP: string) => void;
 }
 
 interface ClientToServerEvents {
@@ -28,5 +29,6 @@ io.on('connection', (socket) => {
 
   socket.on('hello', (data: SocketData): void => {
     console.log('data from hello', data);
+    socket.emit('podIP', `my ip: ${process.env.POD_IP}`);
   });
 });
