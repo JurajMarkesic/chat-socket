@@ -29,6 +29,6 @@ io.on('connection', (socket) => {
 
   socket.on('hello', (data: SocketData): void => {
     console.log('data from hello', data);
-    socket.emit('podIP', `my ip: ${process.env.POD_IP}`);
+    socket.emit('podIP', `my ip: ${process.env.POD_IP}, your ip: ${socket.handshake.address}`);
   });
 });

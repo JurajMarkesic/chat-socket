@@ -5,7 +5,8 @@ metadata:
 spec:
   selector:
     app: chat-socket
-  type: ClusterIP
+  type: NodePort
+  externalTrafficPolicy: Local
   sessionAffinity: ClientIP
   sessionAffinityConfig:
     clientIP:
@@ -14,3 +15,4 @@ spec:
     - protocol: TCP
       port: 3005
       targetPort: 3005
+      nodePort: 31000

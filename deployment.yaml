@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
         - name: chat-socket
-          image: jurajmarkesic/chat-socket:f6ad127493b5ad2e09d9d285d5ce009a5b6a7615
+          image: jurajmarkesic/chat-socket:f297b0b88a44da802891fa80369fe636e8770f73
+          imagePullPolicy: Always
           ports:
             - containerPort: 3005
           env:
