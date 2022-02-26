@@ -5,9 +5,8 @@ metadata:
 spec:
   selector:
     app: chat-socket
-  type: LoadBalancer
+  type: ClusterIP
   ports:
     - protocol: TCP
       port: 3005
       targetPort: 3005
-      nodePort: 31000
