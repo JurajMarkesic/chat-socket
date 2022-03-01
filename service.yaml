@@ -2,6 +2,9 @@ apiVersion: v1
 kind: Service
 metadata:
   name: chat-socket-service
+  annotations:
+    configuration.konghq.com: kong-ingress-config
+    konghq.com/override: kong-ingress-config
 spec:
   selector:
     app: chat-socket

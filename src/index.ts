@@ -29,6 +29,12 @@ io.on('connection', (socket) => {
 
   socket.on('hello', (data: SocketData): void => {
     console.log('data from hello', data);
-    socket.emit('podIP', `my ip: ${process.env.POD_IP}, your ip: ${socket.handshake.address}`);
+    socket.emit(
+      'podIP',
+      // eslint-disable-next-line max-len
+      `my ip: ${process.env.POD_IP}, your ip: ${socket.handshake.address} - ${
+        socket.handshake.headers['x-real-ip']
+      } - ${socket.handshake.headers['x-forwarded-for']} - ${JSON.stringify(socket.handshake.headers, null, 2)}`,
+    );
   });
 });
