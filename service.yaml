@@ -19,3 +19,9 @@ spec:
       port: 3005
       targetPort: 3005
       nodePort: 31000
+      name: 'socket'
+    - protocol: TCP
+      port: 3006
+      targetPort: 3006
+      nodePort: 31001
+      name: 'inter-pod-http'

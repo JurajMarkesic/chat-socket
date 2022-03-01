@@ -14,10 +14,11 @@ spec:
     spec:
       containers:
         - name: chat-socket
-          image: jurajmarkesic/chat-socket:5
-          imagePullPolicy: Always
+          image: jurajmarkesic/chat-socket:14
+          imagePullPolicy: Never
           ports:
             - containerPort: 3005
+            - containerPort: 3006
           env:
             - name: POD_IP
               valueFrom:
